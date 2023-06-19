@@ -1,42 +1,41 @@
-
-
-import Page from './page.js';
-
-/**
- * sub page containing specific selectors and methods for a specific page
- */
-class LoginPage extends Page {
-    /**
-     * define selectors using getter methods
-     */
-    get inputUsername () {
-        return $('#username');
+class LoginPage {
+    get loginLogo() {
+        return $('.login_logo')
+    };
+    get userNameInput() {
+        return $('#user-name')
+    };
+    get passwordInput() {
+        return $('#password')
+    };
+    get loginBtn() {
+        return $('#login-button')
+    };
+    get loginCredentials() {
+        return $("#root > div > div.login_wrapper > div.login_credentials_wrap > div")
+    };
+    get errorUserNameInput() {
+        return $('#login_button_container > div > form > div:nth-child(1) > svg')
+    };
+    get errorPasswordInput() {
+        return $('#login_button_container > div > form > div:nth-child(2) > svg')
+    };
+    get errorMsg() {
+        return $('.error-message-container.error')
+    };
+    get errorTxt() {
+        return $('.error-message-container.error h3')
+    };
+    get errorBtn() {
+        return $('.error-button')
+    };
+    async loginValues (username, password) {
+        await this.userNameInput.setValue(username);
+        await this.passwordInput.setValue(password);
+        await this.loginBtn.click();
+    };
+    open() {
+        return browser.url('http://www.saucedemo.com/')
     }
-
-    get inputPassword () {
-        return $('#password');
-    }
-
-    get btnSubmit () {
-        return $('button[type="submit"]');
-    }
-
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
-    async login (username, password) {
-        await this.inputUsername.setValue(username);
-        await this.inputPassword.setValue(password);
-        await this.btnSubmit.click();
-    }
-
-    /**
-     * overwrite specific options to adapt it to page object
-     */
-    open () {
-        return super.open('login');
-    }
-}
-
+};
 export default new LoginPage();
