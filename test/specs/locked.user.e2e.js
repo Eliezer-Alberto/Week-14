@@ -2,13 +2,11 @@ import LoginPage from '../pageobjects/login.page.js';
 
 describe('Login Process', () => {
     beforeAll(async () => {
-        await browser.setWindowsSize (1920, 1080);
         await browser.url('https://www.saucedemo.com/')
     });
     it('Verify Locked-Out-User Login', async () => {
         await expect (LoginPage.userNameInput).toBeDisplayed();
-        await LoginPage.login('locked_out_user', 'secret_sauce');
-        await LoginPage.loginBtnClick();
-        await expect (errorBtnLocked).toBeDisplayed();
+        await LoginPage.loginValues('locked_out_user', 'secret_sauce');
+        await expect (LoginPage.errorBtnLocked).toBeDisplayed();
     });
 });

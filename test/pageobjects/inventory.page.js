@@ -23,7 +23,7 @@ class InventoryPage {
     get shoppingCart() {
         return $('#shopping_cart_container > a')
     };
-    get checkOut() {
+    get checkout() {
         return $('#checkout')
     };
     get firstName() {
@@ -51,6 +51,20 @@ class InventoryPage {
         await this.firstName.setValue(firstName);
         await this.lastName.setValue(lastName);
         await this.postalCode.setValue(postalCode);
+    };
+    async fillForm () {
+        await this.checkOut.firstNameInputFill();
+        await this.checkOut.lastNameInputFill();
+        await this.checkOut.postalCodeInputFill();
+    };
+    async asideBtnClick() {
+        await this.asideBtn.click();
+    };
+    async logOutBtnClick() {
+        await this.logOutBtn.click();
+    };
+    async checkOutBtn () {
+        await this.checkout.click();
     };
 };
 export default new InventoryPage

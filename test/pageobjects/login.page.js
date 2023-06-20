@@ -37,9 +37,6 @@ class LoginPage {
         await this.passwordInput.setValue(password);
         await this.loginBtn.click();
     };
-    async loginModalBtnClick () {
-        await this.loginModalBtn.click()
-    };
     open() {
         return browser.url('http://www.saucedemo.com/')
     }
