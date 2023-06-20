@@ -5,9 +5,10 @@ describe('Login Process', () => {
         await browser.setWindowsSize (1920, 1080);
         await browser.url('https://www.saucedemo.com/')
     });
-    it('Verify problem_user Login', async () => {
+    it('Verify Locked-Out-User Login', async () => {
         await expect (LoginPage.userNameInput).toBeDisplayed();
-        await LoginPage.login('problem_user', 'secret_sauce');
+        await LoginPage.login('locked_out_user', 'secret_sauce');
         await LoginPage.loginBtnClick();
+        await expect (errorBtnLocked).toBeDisplayed();
     });
 });

@@ -5,9 +5,9 @@ describe('Login Process', () => {
         await browser.setWindowsSize (1920, 1080);
         await browser.url('https://www.saucedemo.com/')
     });
-    it('Verify problem_user Login', async () => {
+    it('Verify performance_glitch_user Login', async () => {
         await expect (LoginPage.userNameInput).toBeDisplayed();
-        await LoginPage.login('problem_user', 'secret_sauce');
+        await LoginPage.login('performance_glitch_user', 'secret_sauce');
         await LoginPage.loginBtnClick();
     });
 });

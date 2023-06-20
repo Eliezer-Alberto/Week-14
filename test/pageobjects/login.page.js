@@ -29,10 +29,16 @@ class LoginPage {
     get errorBtn() {
         return $('.error-button')
     };
+    get errorBtnLocked() {
+        return $('#login_button_container > div > form > div.error-message-container.error > h3')
+    };
     async loginValues (username, password) {
         await this.userNameInput.setValue(username);
         await this.passwordInput.setValue(password);
         await this.loginBtn.click();
+    };
+    async loginModalBtnClick () {
+        await this.loginModalBtn.click()
     };
     open() {
         return browser.url('http://www.saucedemo.com/')
