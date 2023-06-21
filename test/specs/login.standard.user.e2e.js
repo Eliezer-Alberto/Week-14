@@ -9,5 +9,3 @@ describe('Login Process', () => {
         await LoginPage.loginValues('standard_user', 'secret_sauce');
     });
 });
-
-

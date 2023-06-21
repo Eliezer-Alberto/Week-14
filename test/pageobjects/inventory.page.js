@@ -47,24 +47,29 @@ class InventoryPage {
     get logOutBtn() {
         return $('#logout_sidebar_link')
     };
-    async formValues (firstName, lastName, postalCode) {
-        await this.firstName.setValue(firstName);
-        await this.lastName.setValue(lastName);
-        await this.postalCode.setValue(postalCode);
-    };
-    async fillForm () {
-        await this.checkOut.firstNameInputFill();
-        await this.checkOut.lastNameInputFill();
-        await this.checkOut.postalCodeInputFill();
-    };
     async asideBtnClick() {
         await this.asideBtn.click();
     };
-    async logOutBtnClick() {
-        await this.logOutBtn.click();
+    async crossBtnClick() {
+        await this.crossBtn.click();
     };
-    async checkOutBtn () {
-        await this.checkout.click();
+    async addToCartClick() {
+        await this.addToCart.click();
+    };
+    async back2Products() {
+        await this.backToProducts.click();
+    };
+    async shoppingCartClick() {
+        await this.shoppingCart.click();
+    };
+    async continueBtnClick () {
+        await this.continueBtn.click();
+    };
+    async finishBtnClick () {
+        await this.finishBtn.click();
+    };
+    async backHomeBtnClick () {
+        await this.backHomeBtn.click();
     };
 };
-export default new InventoryPage
+export default new InventoryPage();

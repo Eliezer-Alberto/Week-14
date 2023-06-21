@@ -39,6 +39,6 @@ class LoginPage {
     };
     open() {
         return browser.url('http://www.saucedemo.com/')
-    }
+    };
 };
 export default new LoginPage();
